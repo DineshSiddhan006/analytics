@@ -1,4 +1,12 @@
 from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+APP_ROOT = str(Path(__file__).resolve().parent)
+if APP_ROOT not in sys.path:
+    sys.path.insert(0, APP_ROOT)
+
 import streamlit as st
 from config import validate_config, FABRIC_TABLE
 from fabric_warehouse import list_tables
