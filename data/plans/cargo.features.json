@@ -1,0 +1,327 @@
+{
+  "approved": [
+    {
+      "title": "Weight distribution analysis",
+      "business_question": "What is the weight distribution of cargo?",
+      "metric": "Weight_KG",
+      "aggregation": "count",
+      "group_by": null,
+      "chart": "histogram",
+      "period": null,
+      "filters": [],
+      "rationale": "Helps in understanding the range and frequency of cargo weights.",
+      "identity": "eb9fbe2ec3da3017f3b5"
+    },
+    {
+      "title": "Trends in cargo weight over time",
+      "business_question": "How has the average weight of cargo changed over time?",
+      "metric": "Weight_KG",
+      "aggregation": "mean",
+      "group_by": "month",
+      "chart": "area",
+      "period": null,
+      "filters": [],
+      "rationale": "Provides insights into long-term trends and seasonality.",
+      "identity": "40865d0ecaccfa6cac88"
+    },
+    {
+      "title": "Cargo weight distribution by day of the week",
+      "business_question": "What is the distribution of cargo weights for each day of the week?",
+      "metric": "Weight_KG",
+      "aggregation": "count",
+      "group_by": "day_of_week",
+      "chart": "bar",
+      "period": null,
+      "filters": [],
+      "rationale": "Aids in identifying any potential patterns or biases related to day of the week.",
+      "identity": "297dd2ab91da7392d5b0"
+    },
+    {
+      "title": "Cargo weight distribution by quarter",
+      "business_question": "What is the distribution of cargo weights for each quarter?",
+      "metric": "Weight_KG",
+      "aggregation": "count",
+      "group_by": "quarter",
+      "chart": "donut",
+      "period": null,
+      "filters": [],
+      "rationale": "Provides insights into how the distribution of cargo weights varies across quarters.",
+      "identity": "94e046480a956623360d"
+    },
+    {
+      "title": "Weight distribution by is_weekend",
+      "business_question": "What is the distribution of cargo weights for weekdays and weekends?",
+      "metric": "Weight_KG",
+      "aggregation": "count",
+      "group_by": "is_weekend",
+      "chart": "barh",
+      "period": null,
+      "filters": [],
+      "rationale": "Aids in identifying any differences in cargo weights between weekdays and weekends.",
+      "identity": "9351aef43d195ae9355d"
+    },
+    {
+      "title": "Mean of Weight_KG by cargo_route_id",
+      "business_question": "What is the average weight of cargo shipped for each route?",
+      "metric": "Weight_KG",
+      "aggregation": "mean",
+      "group_by": "cargo_route_id",
+      "chart": "bar",
+      "period": null,
+      "filters": [],
+      "rationale": "",
+      "identity": "5b3a4a958c5541337fbf"
+    },
+    {
+      "title": "Mean of Weight_KG by quarter",
+      "business_question": "What is the average weight of cargo per month for each quarter?",
+      "metric": "Weight_KG",
+      "aggregation": "mean",
+      "group_by": "quarter",
+      "chart": "line",
+      "period": "month",
+      "filters": [],
+      "rationale": "",
+      "identity": "2ee3beeff0f2161adf72"
+    },
+    {
+      "title": "Average Cargo Weight by Product",
+      "business_question": "What is the average cargo weight for each product?",
+      "metric": "Weight_KG",
+      "aggregation": "mean",
+      "group_by": "cargo_route_id_display_name",
+      "chart": "bar",
+      "period": null,
+      "filters": [],
+      "rationale": "",
+      "identity": "23cb0f8acb8df32c36ac"
+    }
+  ],
+  "edited": [
+    {
+      "title": "Cargo weight distribution by quarter",
+      "business_question": "What is the distribution of cargo weights for each quarter?",
+      "metric": "Weight_KG",
+      "aggregation": "count",
+      "group_by": "quarter",
+      "chart": "donut",
+      "period": null,
+      "filters": [],
+      "rationale": "Provides insights into how the distribution of cargo weights varies across quarters.",
+      "identity": "94e046480a956623360d"
+    },
+    {
+      "title": "Trends in cargo weight over time",
+      "business_question": "How has the average weight of cargo changed over time?",
+      "metric": "Weight_KG",
+      "aggregation": "mean",
+      "group_by": "month",
+      "chart": "area",
+      "period": null,
+      "filters": [],
+      "rationale": "Provides insights into long-term trends and seasonality.",
+      "identity": "40865d0ecaccfa6cac88"
+    }
+  ],
+  "rejected": [
+    {
+      "identity": "5b3a4a958c5541337fbf",
+      "title": "Cargo weight trends by route",
+      "spec": {
+        "title": "Cargo weight trends by route",
+        "business_question": "How has the average weight of cargo changed over time for different routes?",
+        "metric": "Weight_KG",
+        "aggregation": "mean",
+        "group_by": "cargo_route_id",
+        "chart": "line",
+        "period": null,
+        "filters": [],
+        "rationale": "Assists in identifying any significant changes in weight for specific routes.",
+        "identity": "5b3a4a958c5541337fbf"
+      },
+      "reason": "Retired because this analysis is no longer supported: line charts require a date/time grouping column."
+    },
+    {
+      "identity": "6c423dbc7c1da8ae320c",
+      "title": "Weight lag analysis",
+      "spec": {
+        "title": "Weight lag analysis",
+        "business_question": "How does the cargo weight from a previous time period relate to the current one?",
+        "metric": "Weight_KG",
+        "aggregation": "mean",
+        "group_by": null,
+        "chart": "line",
+        "period": null,
+        "filters": [
+          {
+            "column": "event_timestamp",
+            "operator": "gte",
+            "value": "2022-01-01"
+          }
+        ],
+        "rationale": "Helps in understanding the relationship between cargo weights across different time periods.",
+        "identity": "6c423dbc7c1da8ae320c"
+      },
+      "reason": "Retired because this analysis is no longer supported: line charts require a date/time grouping column."
+    },
+    {
+      "identity": "79e4e22da4d934646785",
+      "title": "Cargo weight correlation with target_log",
+      "spec": {
+        "title": "Cargo weight correlation with target_log",
+        "business_question": "Is there a correlation between cargo weight and the target_log?",
+        "metric": "Weight_KG",
+        "aggregation": "mean",
+        "group_by": null,
+        "chart": "scatter",
+        "period": null,
+        "filters": [
+          {
+            "column": "target_log",
+            "operator": "neq",
+            "value": []
+          }
+        ],
+        "rationale": "Provides insights into the relationship between cargo weight and the target variable.",
+        "identity": "79e4e22da4d934646785"
+      },
+      "reason": "Retired because this analysis is no longer supported: Unsupported chart: scatter"
+    },
+    {
+      "identity": "bb57923b2dedb911900c",
+      "title": "Top routes by total cargo weight",
+      "spec": {
+        "title": "Top routes by total cargo weight",
+        "business_question": "Which routes have transported the most cumulative cargo over time?",
+        "metric": "Weight_KG",
+        "aggregation": "sum",
+        "group_by": null,
+        "chart": "bar",
+        "period": null,
+        "filters": [],
+        "rationale": "Helps in understanding the total cargo transported by each route.",
+        "identity": "bb57923b2dedb911900c"
+      },
+      "reason": "Retired because this analysis is no longer supported: 'cumulative' analysis is not supported by the current analytics engine."
+    },
+    {
+      "identity": "8e95414c96702357511b",
+      "title": "Cargo weight correlation with day of the week",
+      "spec": {
+        "title": "Cargo weight correlation with day of the week",
+        "business_question": "Is there a correlation between cargo weight and the day of the week?",
+        "metric": "Weight_KG",
+        "aggregation": "mean",
+        "group_by": "is_weekend",
+        "chart": "scatter",
+        "period": null,
+        "filters": [],
+        "rationale": "Helps in understanding if there is any relationship between cargo weight and the day of the week.",
+        "identity": "8e95414c96702357511b"
+      },
+      "reason": "Retired because this analysis is no longer supported: Unsupported chart: scatter"
+    },
+    {
+      "identity": "99cdb60e436d2ed4aabb",
+      "title": "Weight lag analysis across different lags",
+      "spec": {
+        "title": "Weight lag analysis across different lags",
+        "business_question": "How does the cargo weight from various previous time periods relate to the current one?",
+        "metric": "Weight_KG",
+        "aggregation": "mean",
+        "group_by": null,
+        "chart": "line",
+        "period": null,
+        "filters": [],
+        "rationale": "Provides insights into the relationship between cargo weights across different time periods and various lags.",
+        "identity": "99cdb60e436d2ed4aabb"
+      },
+      "reason": "Retired because this analysis is no longer supported: line charts require a date/time grouping column."
+    },
+    {
+      "identity": "4ec2009d4bef9c7a6e30",
+      "title": "Cargo weight distribution by day of year",
+      "spec": {
+        "title": "Cargo weight distribution by day of year",
+        "business_question": "What is the distribution of cargo weights for each day of the year?",
+        "metric": "Weight_KG",
+        "aggregation": "count",
+        "group_by": "day_of_year",
+        "chart": "bar",
+        "period": null,
+        "filters": [],
+        "rationale": "Aids in identifying any patterns or biases related to day of the year.",
+        "identity": "4ec2009d4bef9c7a6e30"
+      }
+    },
+    {
+      "identity": "a2b20507e963007ffe18",
+      "title": "Nunique of Weight_KG by cargo_route_id",
+      "spec": {
+        "title": "Nunique of Weight_KG by cargo_route_id",
+        "business_question": "How many unique cargo shipments have occurred for each route?",
+        "metric": "Weight_KG",
+        "aggregation": "nunique",
+        "group_by": "cargo_route_id",
+        "chart": "barh",
+        "period": null,
+        "filters": [],
+        "rationale": "",
+        "identity": "a2b20507e963007ffe18"
+      },
+      "reason": "Retired because this analysis is no longer supported: nunique is not meaningful for high-cardinality numeric metric Weight_KG; use a supported measure aggregation."
+    },
+    {
+      "identity": "65633c688590c0b6d3b8",
+      "title": "Average Cargo Weight across Products by Month",
+      "spec": {
+        "title": "Average Cargo Weight across Products by Month",
+        "business_question": "Compare average cargo weight across products each month",
+        "metric": "Weight_KG",
+        "aggregation": "mean",
+        "group_by": "month",
+        "chart": "bar",
+        "period": null,
+        "filters": [
+          {
+            "column": "cargo_route_id_display_name",
+            "operator": "in",
+            "value": [
+              "Jeddah (JED) - General Cargo (GEN) (Transit Outbound)",
+              "Dammam (DMM) - Perishables (PER) (Import)",
+              "Riyadh (RUH) - General Cargo (GEN) (Import)",
+              "Jeddah (JED) - Perishables (PER) (Import)",
+              "Riyadh (RUH) - General Cargo (GEN) (Transit Outbound)",
+              "Jeddah (JED) - General Cargo (GEN) (Import)",
+              "Jeddah (JED) - Dangerous Goods (DGR) (Import)",
+              "Jeddah (JED) - General Cargo (GEN) (Export)",
+              "Riyadh (RUH) - Air Mail (MAL) (Import)"
+            ]
+          }
+        ],
+        "rationale": "",
+        "identity": "65633c688590c0b6d3b8"
+      },
+      "reason": "Retired because this analysis is no longer supported: Grouping column month has fewer than two distinct values after filters and time bucketing; it cannot support a comparison."
+    },
+    {
+      "identity": "70370059946ca7fc4ed2",
+      "title": "Sum of Weight_KG by cargo_route_id",
+      "spec": {
+        "title": "Sum of Weight_KG by cargo_route_id",
+        "business_question": "What is the total weight of cargo shipped for each route?",
+        "metric": "Weight_KG",
+        "aggregation": "sum",
+        "group_by": "cargo_route_id",
+        "chart": "bar",
+        "period": null,
+        "filters": [],
+        "rationale": "",
+        "identity": "70370059946ca7fc4ed2"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "table": "cargo.features",
+  "updated_at": "2026-10-30T12:33:00.799577+00:00"
+}

@@ -1,0 +1,119 @@
+{
+  "_about": "Dictionary of coded values and their readable names. Edit this file; code changes are not needed. VALUE_MAPPINGS_PATH can point to a mounted copy.",
+  "columns": {
+    "Station": {
+      "0": "Al-Baha (ABT)",
+      "1": "Abha (AHB)",
+      "2": "Al-Jawf (AJF)",
+      "3": "Al Qaisumah (AQI)",
+      "4": "Bisha (BHH)",
+      "5": "Dhahran (DHA)",
+      "6": "Dammam (DMM)",
+      "7": "Dawadmi (DWD)",
+      "8": "Najran (EAM)",
+      "9": "Al Wajh (EJH)",
+      "10": "Qassim (ELQ)",
+      "11": "Jizan (GIZ)",
+      "12": "Hail (HAS)",
+      "13": "Hofuf (HOF)",
+      "14": "Jeddah (JED)",
+      "15": "Medina (MED)",
+      "16": "Neom Bay (NUM)",
+      "17": "Arar (RAE)",
+      "18": "Rafha (RAH)",
+      "19": "Riyadh (RUH)",
+      "20": "Sharurah (SHW)",
+      "21": "Taif (TIF)",
+      "22": "Turaif (TUI)",
+      "23": "Tabuk (TUU)",
+      "24": "Al Ula (ULH)",
+      "25": "Gurayat (URY)",
+      "26": "Wadi Dawasir (WAE)",
+      "27": "Yanbu (YNB)"
+    },
+    "Station_code": {
+      "0": "ABT",
+      "1": "AHB",
+      "2": "AJF",
+      "3": "AQI",
+      "4": "BHH",
+      "5": "DHA",
+      "6": "DMM",
+      "7": "DWD",
+      "8": "EAM",
+      "9": "EJH",
+      "10": "ELQ",
+      "11": "GIZ",
+      "12": "HAS",
+      "13": "HOF",
+      "14": "JED",
+      "15": "MED",
+      "16": "NUM",
+      "17": "RAE",
+      "18": "RAH",
+      "19": "RUH",
+      "20": "SHW",
+      "21": "TIF",
+      "22": "TUI",
+      "23": "TUU",
+      "24": "ULH",
+      "25": "URY",
+      "26": "WAE",
+      "27": "YNB"
+    },
+    "Product": {
+      "0": "Live Animals (AVI)",
+      "1": "Courier / Express (COU)",
+      "2": "Dangerous Goods (DGR)",
+      "3": "General Cargo (GEN)",
+      "4": "Human Remains (HUM)",
+      "5": "Air Mail (MAL)",
+      "6": "Perishables (PER)",
+      "7": "Pharmaceuticals (PIL)",
+      "8": "Valuable Cargo (VAL)",
+      "9": "Vulnerable Cargo (VUN)"
+    },
+    "Product_code": {
+      "0": "AVI",
+      "1": "COU",
+      "2": "DGR",
+      "3": "GEN",
+      "4": "HUM",
+      "5": "MAL",
+      "6": "PER",
+      "7": "PIL",
+      "8": "VAL",
+      "9": "VUN"
+    },
+    "Type": {
+      "0": "Export",
+      "1": "Import",
+      "2": "Transit Inbound",
+      "3": "Transit Outbound"
+    },
+    "Type_code": {
+      "0": "EXPORT",
+      "1": "IMPORT",
+      "2": "TRN IN",
+      "3": "TRN OUT"
+    },
+    "is_weekend": {
+      "0": "Weekday",
+      "1": "Weekend",
+      "false": "Weekday",
+      "true": "Weekend"
+    }
+  },
+  "composites": [
+    {
+      "pattern": "^\\d+_\\d+_\\d+$",
+      "separator": "_",
+      "parts": [
+        "Station_code",
+        "Product_code",
+        "Type_code"
+      ],
+      "template": "{0} / {1} ({2})"
+    }
+  ]
+}
